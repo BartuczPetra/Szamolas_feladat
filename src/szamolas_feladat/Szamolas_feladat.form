@@ -205,7 +205,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblValasz">
           <Properties>
-            <Property name="text" type="java.lang.String" value="15 nem j&#xf3;!"/>
+            <Property name="text" type="java.lang.String" value="J&#xf3; / Nem j&#xf3;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnEllenorzes">
@@ -222,11 +222,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xda;j feladat"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUjActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnMegoldas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Megold&#xe1;s"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMegoldasActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="pnlStatisztika">
       <Properties>

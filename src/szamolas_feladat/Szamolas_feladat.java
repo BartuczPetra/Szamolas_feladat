@@ -72,7 +72,7 @@ public class Szamolas_feladat extends javax.swing.JFrame {
 
         lblFeladat.setText("5 + 12 =");
 
-        lblValasz.setText("15 nem jó!");
+        lblValasz.setText("Jó / Nem jó");
 
         btnEllenorzes.setText("Ellenőrzés");
         btnEllenorzes.addActionListener(new java.awt.event.ActionListener() {
@@ -111,8 +111,18 @@ public class Szamolas_feladat extends javax.swing.JFrame {
         );
 
         btnUj.setText("Új feladat");
+        btnUj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUjActionPerformed(evt);
+            }
+        });
 
         btnMegoldas.setText("Megoldás");
+        btnMegoldas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMegoldasActionPerformed(evt);
+            }
+        });
 
         pnlStatisztika.setBorder(javax.swing.BorderFactory.createTitledBorder("Statisztika"));
 
@@ -283,9 +293,30 @@ public class Szamolas_feladat extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuMuveletValasztas
 
     private void btnEllenorzesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEllenorzesActionPerformed
-        lblValasz.setText("4 jó!");
-        
+        if (txtEredmeny.getText().equals("4")) {
+            lblValasz.setText("4 jó!");
+            txtEredmeny.setText("");
+            btnEllenorzes.setEnabled(false);
+        }else if (txtEredmeny.getText().equals("")) {
+            lblValasz.setText("Nincs érték!");
+        }
+        else{
+            lblValasz.setText(txtEredmeny.getText()+" nem jó!");
+            txtEredmeny.setText("");
+        }
     }//GEN-LAST:event_btnEllenorzesActionPerformed
+
+    private void btnMegoldasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMegoldasActionPerformed
+        lblValasz.setText("Jó / Nem jó");
+        txtEredmeny.setText("4");
+        btnEllenorzes.setEnabled(false);
+    }//GEN-LAST:event_btnMegoldasActionPerformed
+
+    private void btnUjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUjActionPerformed
+        lblFeladat.setText("20 / 5 = ");
+        txtEredmeny.setText("");
+        btnEllenorzes.setEnabled(true);
+    }//GEN-LAST:event_btnUjActionPerformed
 
     
     /**
